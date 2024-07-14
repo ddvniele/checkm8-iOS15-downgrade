@@ -81,6 +81,9 @@ enjoy now your device fully activated on iOS 15!
 - iCloud passwords don't work (at least for me). i haven't been able to find a solution yet
   - if you have any problem or suggestion you can reach me [here](https://github.com/ddvniele/checkm8-iOS15-downgrade/issues)
 
+## 📥 NOT AN ICLOUD BYPASS!
+this is not a method for bypassing an iCloud lock. in fact, you can't grab files with Filza if you can't activate your device on the newest iOS available.
+
 ## 📂 credits
 - [Orangera1n](https://gist.github.com/Orangera1n), who was the first to write a guide about it
 - [kjutzn](https://github.com/kjutzn) with his project [cry-ptex1](https://github.com/kjutzn/cry-ptex1) and his great help into his discord server
