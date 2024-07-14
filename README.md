@@ -79,6 +79,7 @@ enjoy now your device fully activated on iOS 15!
 
 ## 🛠️ known issues
 - iCloud passwords don't work (at least for me). i haven't been able to find a solution yet
+  - if you have any problem or suggestion you can reach me [here](https://github.com/ddvniele/checkm8-iOS15-downgrade/issues)
 
 ## 📂 credits
 - [Orangera1n](https://gist.github.com/Orangera1n), who was the first to write a guide about it
