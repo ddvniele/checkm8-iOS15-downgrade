@@ -4,8 +4,8 @@ this is a little guide that aims to help you downgrading your device from iOS 16
 ## ⚠️ you'll need
 - a mac (probably possible with linux, not sure tho)
 - a checkm8 device (basically those that can be jailbroken with palera1n)
- - except for iPhone X that would break the restore
- - this means that iPhone XS/XR and up, iPad mini 5 and up, iPad air 3 and up, iPad pro 2018 and up, and iPad 8th gen and up are not supported
+  - except for iPhone X that would break the restore
+  - this means that iPhone XS/XR and up, iPad mini 5 and up, iPad air 3 and up, iPad pro 2018 and up, and iPad 8th gen and up are not supported
 - the ipsw files specific for your device of both the last version available and the version you want to downgrade to ([ipsw.me](https://ipsw.me/))
 - the blobs shsh2 of the version you want to downgrade to (specifically saved for your device when the version was still signed, maybe with [Tss Saver](https://tsssaver.1conan.com/) or smth)
 - [this file](https://github.com/ddvniele/checkm8-iOS15-downgrade/releases/download/mobileactivationd/mobileactivationd) (download it on your desktop)
@@ -20,10 +20,10 @@ the first thing to do is restoring your device to the latest iOS 16/17 version a
 - open Sileo, reload the sources and do all the updates that are needed
 - search for Filza File Manager and install it
 - open Filza; you need to grab some files from the internal storage and send them to your mac (use airdrop or whatever):
- - go into /var/containers/Data/System and open the folder that ends with "mobileactivationd", then "Library", then open "activation_records" and send the file "activation_record.plist" to your mac (you'll probably need to change the file permissions in order to do it)
- - do the same entering on the folder "internal" instead of "activation_records" and grab the file "data_ark.plist"
- - go into /var/mobile/Library and grab the **entire** "FairPlay" folder (you can zip it and then unzip it on your mac)
- - go into /var/wireless/Library/Preferences and grab the file whose name ends with "nobackup.plist"
+  - go into /var/containers/Data/System and open the folder that ends with "mobileactivationd", then "Library", then open "activation_records" and send the file "activation_record.plist" to your mac (you'll probably need to change the file permissions in order to do it)
+  - do the same entering on the folder "internal" instead of "activation_records" and grab the file "data_ark.plist"
+  - go into /var/mobile/Library and grab the **entire** "FairPlay" folder (you can zip it and then unzip it on your mac)
+  - go into /var/wireless/Library/Preferences and grab the file whose name ends with "nobackup.plist"
 - you can now put your device into dfu mode and then in pwndfu (you can follow [this guide](https://github.com/ddvniele/iOS-64bit-dualboot-guide#3-enter-pwndfu-mode) i wrote some times ago)
 
 ## 2. DOWNGRADING WITH FUTURERESTORE
@@ -34,9 +34,9 @@ ensure that all the files you previously grabbed are secured on your mac before 
 - open a terminal window and type <code>cd</code>, then a space, then drag and drop the futurerestore folder on this window and press enter
 - enter the command <code>chmod +x ./futurerestore</code>
 - enter the command <code>./futurerestore -t (SHSH) (IPSW) --use-pwndfu --latest-sep --latest-baseband</code>
- - if your device has no baseband, replace --latest-baseband with --no-baseband
- - replace (SHSH) with the name of the file that contains your blobs (don't forget the extension), same thing for the ipsw file in (IPSW)
- - usually the first tries won't succeed; rerun the same command until the restore succeeds
+  - if your device has no baseband, replace --latest-baseband with --no-baseband
+  - replace (SHSH) with the name of the file that contains your blobs (don't forget the extension), same thing for the ipsw file in (IPSW)
+  - usually the first tries won't succeed; rerun the same command until the restore succeeds
 - now wait for the restore to finish without unplugging your device from your mac
 
 ## 3. BOOTING SSH RAMDISK
@@ -49,7 +49,7 @@ when the device finishes restoring and boots into the setup screen, it's time to
 - enter the command <code>./sshrd.sh ssh</code> to connect to the ssh
 - enter the command <code>mount_filesystems</code> to mount system files
 - enter the command <code>mount_apfs /dev/disk0s1s8 /mnt8</code> to mount mnt8
- - run <code>mount_apfs /dev/disk0s1s7 /mnt8</code> instead if your device has no baseband
+  - run <code>mount_apfs /dev/disk0s1s7 /mnt8</code> instead if your device has no baseband
 
 ## 4. MOBILEACTIVATIOND
 it's time to use the mobileactivationd file you downloaded at the beginning.
@@ -66,7 +66,7 @@ it's time to use the mobileactivationd file you downloaded at the beginning.
 now we have to transfer the other files we grabbed in step 1 into the device.
 - boot into ssh ramdisk again, putting your device into dfu mode, and in the same terminal window as before, running <code>./sshrd.sh boot</code> and then <code>./sshrd.sh ssh</code>
 - mount now the filesystems: <code>mount_filesystems</code> and then <code>mount_apfs /dev/disk0s1s8 /mnt8</code>
- - same as before, run <code>mount_apfs /dev/disk0s1s7 /mnt8</code> instead if your device has no baseband
+  - same as before, run <code>mount_apfs /dev/disk0s1s7 /mnt8</code> instead if your device has no baseband
 - open FileZilla again and connect again to your device in the same way you did before
 - go into /mnt2/mobile/Media/Downloads and create a new directory named "1", then drag and drop here your Activation folder (a folder that contains all the files we grabbed in step 1)
 - move the "1" folder into /mnt2/mobile/Media
