@@ -78,7 +78,7 @@ now we have to transfer the other files we grabbed in step 1 into the device.
 enjoy now your device fully activated on iOS 15!
 
 ## 🛠️ known issues
-- iCloud passwords don't work (at least for me). i hasn't been able to find a solution yet
+- iCloud passwords don't work (at least for me). i haven't been able to find a solution yet
 
 ## 📂 credits
 - [Orangera1n](https://gist.github.com/Orangera1n), who was the first to write a guide about it
