@@ -76,6 +76,7 @@ now we have to transfer the other files we grabbed in step 1 into the device.
 - delete the file that ends with "nobackup.plist" into /mnt2/wireless/Library/Preferences and replace it with your own file grabbed in step 1
 - return into the terminal window you used before and run <code>reboot</code>
 enjoy now your device fully activated on iOS 15!
+  - run <code>palera1n --force-revert -f</code> to remove palera1n jailbreak (if you want)
 
 ## 🛠️ known issues
 - iCloud passwords don't work (at least for me). i haven't been able to find a solution yet
