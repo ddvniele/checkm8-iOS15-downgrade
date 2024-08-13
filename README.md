@@ -15,7 +15,7 @@ this is a little guide that aims to help you downgrading your device from iOS 16
 
 ## 1. GRABBING FILES
 the first thing to do is restoring your device to the latest iOS 16/17 version available with iTunes/Finder, and then normally activating it with the initial configuration setup as if it was a new device. then:
-- connect your device to your mac and in a new terminal window run <code>palera1n</code> and follow the process
+- connect your device to your mac and in a new terminal window run <code>palera1n -l</code> and follow the process
 - after the device reboots, open the new palera1n app and install Sileo (set the password to "alpine" when it asks you)
 - open Sileo, reload the sources and do all the updates that are needed
 - search for Filza File Manager and install it
