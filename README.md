@@ -1,17 +1,18 @@
-# ⏱️ activate iOS 15 after downgrade with futurerestore
+# ⏱️ activate iOS 15 after a downgrade with futurerestore
 this is a little guide that aims to help you downgrading your device from iOS 16/17 to iOS 15 avoiding every activation problem. i’d like to specify that this is entirely based on my experience so far and if you have any suggestion to make, don’t hesitate to do it.
 
-## ⚠️ you'll need
-- a mac (probably possible with linux, not sure tho)
-- a checkm8 device (basically those that can be jailbroken with palera1n)
-  - except for iPhone X that would break the restore
-  - this means that iPhone XS/XR and up, iPad mini 5 and up, iPad air 3 and up, iPad pro 2018 and up, and iPad 8th gen and up are not supported
-- the ipsw files specific for your device of both the last version available and the version you want to downgrade to ([ipsw.me](https://ipsw.me/))
-- the blobs shsh2 of the version you want to downgrade to (specifically saved for your device when the version was still signed, maybe with [Tss Saver](https://tsssaver.1conan.com/) or smth)
-- [this file](https://github.com/ddvniele/checkm8-iOS15-downgrade/releases/download/mobileactivationd/mobileactivationd) (download it on your desktop)
-- palera1n installed on your mac ([see here](https://palera.in/))
-- the FileZilla app installed on your mac ([download here](https://filezilla-project.org/))
-- the SSHRD_Script repo cloned on your mac (by running this command on a terminal window: <code>git clone https://github.com/verygenericname/SSHRD_Script --recursive</code>)
+>[!IMPORTANT]
+>  you'll need:
+> - a mac (probably possible with linux, not sure tho)
+> - a checkm8 device (basically those that can be jailbroken with palera1n)
+>   - except for iPhone X that would break the restore
+>   - this means that iPhone XS/XR and up, iPad mini 5 and up, iPad air 3 and up, iPad pro 2018 and up, and iPad 8th gen and up are not supported
+> - the ipsw files specific for your device of both the last version available and the version you want to downgrade to ([ipsw.me](https://ipsw.me/))
+> - the blobs shsh2 of the version you want to downgrade to (specifically saved for your device when the version was still signed, maybe with [Tss Saver](https://tsssaver.1conan.com/) or smth)
+> - [this file](https://github.com/ddvniele/checkm8-iOS15-downgrade/releases/download/mobileactivationd/mobileactivationd) (download it on your desktop)
+> - palera1n installed on your mac ([see here](https://palera.in/))
+> - the FileZilla app installed on your mac ([download here](https://filezilla-project.org/))
+> - the SSHRD_Script repo cloned on your mac (by running this command on a terminal window: <code>git clone https://github.com/verygenericname/SSHRD_Script --recursive</code>)
 
 ## 1. GRABBING FILES
 the first thing to do is restoring your device to the latest iOS 16/17 version available with iTunes/Finder, and then normally activating it with the initial configuration setup as if it was a new device. then:
@@ -78,9 +79,10 @@ now we have to transfer the other files we grabbed in step 1 into the device.
 enjoy now your device fully activated on iOS 15!
   - run <code>palera1n --force-revert -f</code> to remove palera1n jailbreak (if you want)
 
-## 🛠️ known issues
-- iCloud passwords don't work (at least for me). i haven't been able to find a solution yet
-  - if you have any problem or suggestion you can reach me [here](https://github.com/ddvniele/checkm8-iOS15-downgrade/issues)
+>[!WARNING]
+> KNOWN ISSUES:
+> - iCloud passwords don't work (at least for me). i haven't been able to find a solution yet
+>   - if you have any problem or suggestion you can reach me [here](https://github.com/ddvniele/checkm8-iOS15-downgrade/issues)
 
 ## 📥 NOT AN ICLOUD BYPASS!
 this is not a method for bypassing an iCloud lock. in fact, you can't grab files with Filza if you can't activate your device on the newest iOS available.
