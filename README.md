@@ -9,9 +9,9 @@ this is a little guide that aims to help you downgrading your device from iOS 16
 >   - this means that iPhone XS/XR and up, iPad mini 5 and up, iPad air 3 and up, iPad pro 2018 and up, and iPad 8th gen and up are not supported
 > - the ipsw files specific for your device of both the last version available and the version you want to downgrade to ([ipsw.me](https://ipsw.me/))
 > - the blobs shsh2 of the version you want to downgrade to (specifically saved for your device when the version was still signed, maybe with [Tss Saver](https://tsssaver.1conan.com/) or smth)
-> - [this file](https://github.com/ddvniele/checkm8-iOS15-downgrade/releases/download/mobileactivationd/mobileactivationd) (download it on your desktop)
+> - [this file](https://github.com/ddvniele/checkm8-iOS15-downgrade/releases/download/downloads/mobileactivationd) (download it on your desktop)
 > - palera1n installed on your mac ([see here](https://palera.in/))
-> - the FileZilla app installed on your mac ([download here](https://filezilla-project.org/))
+> - the FileZilla app installed on your mac ([download here](https://github.com/ddvniele/checkm8-iOS15-downgrade/releases/download/downloads/FileZilla.zip))
 > - the SSHRD_Script repo cloned on your mac (by running this command on a terminal window: <code>git clone https://github.com/verygenericname/SSHRD_Script --recursive</code>)
 
 ## 1. GRABBING FILES
@@ -29,7 +29,7 @@ the first thing to do is restoring your device to the latest iOS 16/17 version a
 
 ## 2. DOWNGRADING WITH FUTURERESTORE
 ensure that all the files you previously grabbed are secured on your mac before restoring.
-- download the futurerestore script [here](https://nightly.link/futurerestore/futurerestore/workflows/ci/main) and put it into a folder called "futurerestore" located on your desktop.
+- download the futurerestore script [here](https://github.com/ddvniele/checkm8-iOS15-downgrade/releases/download/downloads/futurerestore) and put it into a folder called "futurerestore" located on your desktop.
 - put into this folder also the shsh2 file of the blobs and the ipsw for the version you want to downgrade to
 - verify if your device has a baseband. you can search on internet for it. usually wifi iPads don't have it
 - open a terminal window and type <code>cd</code>, then a space, then drag and drop the futurerestore folder on this window and press enter
