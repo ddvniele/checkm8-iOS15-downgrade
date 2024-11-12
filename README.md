@@ -1,6 +1,9 @@
 # ⏱️ activate iOS 15 after a downgrade with futurerestore
 this is a little guide that aims to help you downgrading your device from iOS 16/17 to iOS 15 avoiding every activation problem. i’d like to specify that this is entirely based on my experience so far and if you have any suggestion to make, don’t hesitate to do it.
 
+## 📮 last updated: Nov 12, 2024
+- updated to get rid of palera1n fakefs use (takes less time and less device storage)
+
 >[!IMPORTANT]
 >  you'll need:
 > - a mac (probably possible with linux, not sure tho)
@@ -42,33 +45,28 @@ ensure that all the files you previously grabbed are secured on your mac before 
 
 ## 3. BOOTING SSH RAMDISK
 when the device finishes restoring and boots into the setup screen, it's time to boot into its ssh ramdisk.
-- open a terminal window and enter the command <code>palera1n -c -f</code> (unlike the first time, we're now creating fakefs; wait up to 10 minutes until the device reboots into recovery mode)
-- without booting the device, when it shows the recovery mode, we have to put it into dfu mode (you can search on internet how to do it, it's really simple)
+- put your device into dfu mode (you can search on internet how to do it, it's really simple)
 - open now another terminal window, and enter the command <code>cd SSHRD_Script</code> in order to use the ssh ramdisk
 - enter the command <code>./sshrd.sh (iOS version)</code>, replacing (iOS version) with the actual version you downgraded to
 - enter then the command <code>./sshrd.sh boot</code> to boot the ramdisk
 - enter the command <code>./sshrd.sh ssh</code> to connect to the ssh
 - enter the command <code>mount_filesystems</code> to mount system files
-- enter the command <code>mount_apfs /dev/disk0s1s8 /mnt8</code> to mount mnt8
-  - run <code>mount_apfs /dev/disk0s1s7 /mnt8</code> instead if your device has no baseband
 
 ## 4. MOBILEACTIVATIOND
 it's time to use the mobileactivationd file you downloaded at the beginning.
-- on the same terminal window as the steps before, run <code>ldid -e /mnt8/usr/libexec/mobileactivationd > /mnt8/ents.xml</code>
-- run <code>mv /mnt8/usr/libexec/mobileactivationd /mnt8/usr/libexec/mobileactivationd_backup</code>
-- open now FileZilla, go to File > Site Manager, select Logon Tipe: Normal, digit the password "alpine" and then Connect
-- ignore the alert that show up, digit again the password "alpine" and confirm
-- go now into /mnt8/usr/libexec and drag and drop here the mobileactivationd file downloaded at the beginning of this guide
-- return into the terminal window you used before and run <code>chmod 755 /mnt8/usr/libexec/mobileactivationd</code>
-- then run <code>ldid -S/mnt8/ents.xml /mnt8/usr/libexec/mobileactivationd</code>
+- on the same terminal window as the steps before, run <code>ldid -e /mnt1/usr/libexec/mobileactivationd > /mnt1/ents.xml</code>
+- run <code>mv /mnt1/usr/libexec/mobileactivationd /mnt1/usr/libexec/mobileactivationd_backup</code>
+- open now FileZilla, go to File > Site Manager, put inside the window that shows up [these settings](https://user-images.githubusercontent.com/96156354/234979392-bf090edd-4516-4d41-ab1e-4731dc771f0e.png) and then click on "Connect"
+- go now into /mnt1/usr/libexec and drag and drop here the mobileactivationd file downloaded at the beginning of this guide
+- return into the terminal window you used before and run <code>chmod 755 /mnt1/usr/libexec/mobileactivationd</code>
+- then run <code>ldid -S/mnt1/ents.xml /mnt1/usr/libexec/mobileactivationd</code>
 - enter now the command <code>reboot</code> and wait for your device to reboot
 
 ## 5. TRANSFER ACTIVATION FILES
 now we have to transfer the other files we grabbed in step 1 into the device.
 - boot into ssh ramdisk again, putting your device into dfu mode, and in the same terminal window as before, running <code>./sshrd.sh boot</code> and then <code>./sshrd.sh ssh</code>
-- mount now the filesystems: <code>mount_filesystems</code> and then <code>mount_apfs /dev/disk0s1s8 /mnt8</code>
-  - same as before, run <code>mount_apfs /dev/disk0s1s7 /mnt8</code> instead if your device has no baseband
-- open FileZilla again and connect again to your device in the same way you did before
+- mount now the filesystems: <code>mount_filesystems</code>
+- open FileZilla again and connect again to your device in the same way you did before (follow [these settings](https://user-images.githubusercontent.com/96156354/234979392-bf090edd-4516-4d41-ab1e-4731dc771f0e.png) again)
 - go into /mnt2/mobile/Media/Downloads and create a new directory named "1", then drag and drop here your Activation folder (a folder that contains all the files we grabbed in step 1)
 - move the "1" folder into /mnt2/mobile/Media
 - move the "data_ark.plist" contained inside the Activation folder into /mnt2/containers/Data/System and then enter each folder, then the Library folder, until you find a folder called "internal" that contains a "data_ark.plist" that you need to delete and replace with the "data_ark.plist" file of your Activation folder
@@ -77,7 +75,6 @@ now we have to transfer the other files we grabbed in step 1 into the device.
 - delete the file that ends with "nobackup.plist" into /mnt2/wireless/Library/Preferences and replace it with your own file grabbed in step 1
 - return into the terminal window you used before and run <code>reboot</code>
 enjoy now your device fully activated on iOS 15!
-  - run <code>palera1n --force-revert -f</code> to remove palera1n jailbreak (if you want)
 
 >[!WARNING]
 > KNOWN ISSUES:
