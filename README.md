@@ -76,7 +76,7 @@ now we have to transfer the other files we grabbed in step 1 into the device.
 - return into the terminal window you used before and run <code>reboot</code>
 enjoy now your device fully activated on iOS 15!
 
-## ⁉️ troubleshooting
+## ⁉️ TROUBLESHOOTING
 if you are unable to successfully activate your device because of some errors, you can find some solutions for most of the common errors on the [troubleshooting page](https://github.com/ddvniele/checkm8-iOS15-14-downgrade/blob/main/troubleshooting.md)
 
 ## 📥 NOT AN ICLOUD BYPASS!
