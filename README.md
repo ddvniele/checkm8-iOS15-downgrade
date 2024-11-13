@@ -1,8 +1,9 @@
 # ⏱️ activate iOS 15/14 after a downgrade with futurerestore
 this is a little guide that aims to help you downgrading your device from iOS 18/17/16 to iOS 15/14 avoiding every activation problem. i’d like to specify that this is entirely based on my experience so far and if you have any suggestion to make, don’t hesitate to do it.
 
-## 📮 last updated: Nov 12, 2024
+## 📮 last updated: Nov 13, 2024
 - updated to get rid of palera1n fakefs use (takes less time and less device storage)
+- added troubleshooting page
 
 >[!IMPORTANT]
 >  you'll need:
