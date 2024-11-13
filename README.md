@@ -12,9 +12,9 @@ this is a little guide that aims to help you downgrading your device from iOS 18
 >   - this means that iPhone XS/XR and up, iPad mini 5 and up, iPad air 3 and up, iPad pro 2018 and up, and iPad 8th gen and up are not supported
 > - the ipsw files specific for your device of both the last version available and the version you want to downgrade to ([ipsw.me](https://ipsw.me/))
 > - the blobs shsh2 of the version you want to downgrade to (specifically saved for your device when the version was still signed, maybe with [Tss Saver](https://tsssaver.1conan.com/) or smth)
-> - [this file](https://github.com/ddvniele/checkm8-iOS15-downgrade/releases/download/downloads/mobileactivationd) (download it on your desktop)
+> - [this file](https://github.com/ddvniele/checkm8-iOS15-14-downgrade/releases/download/downloads/mobileactivationd) (download it on your desktop)
 > - palera1n installed on your mac ([see here](https://palera.in/))
-> - the FileZilla app installed on your mac ([download here](https://github.com/ddvniele/checkm8-iOS15-downgrade/releases/download/downloads/FileZilla.zip))
+> - the FileZilla app installed on your mac ([download here](https://github.com/ddvniele/checkm8-iOS15-14-downgrade/releases/download/downloads/FileZilla.zip))
 > - the SSHRD_Script repo cloned on your mac (by running this command on a terminal window: <code>git clone https://github.com/verygenericname/SSHRD_Script --recursive</code>)
 
 ## 1. GRABBING FILES
@@ -32,7 +32,7 @@ the first thing to do is restoring your device to the latest iOS 16/17 version a
 
 ## 2. DOWNGRADING WITH FUTURERESTORE
 ensure that all the files you previously grabbed are secured on your mac before restoring.
-- download the futurerestore script [here](https://github.com/ddvniele/checkm8-iOS15-downgrade/releases/download/downloads/futurerestore) and put it into a folder called "futurerestore" located on your desktop.
+- download the futurerestore script [here](https://github.com/ddvniele/checkm8-iOS15-14-downgrade/releases/download/downloads/futurerestore) and put it into a folder called "futurerestore" located on your desktop.
 - put into this folder also the shsh2 file of the blobs and the ipsw for the version you want to downgrade to
 - verify if your device has a baseband. you can search on internet for it. usually wifi iPads don't have it
 - open a terminal window and type <code>cd</code>, then a space, then drag and drop the futurerestore folder on this window and press enter
@@ -76,10 +76,8 @@ now we have to transfer the other files we grabbed in step 1 into the device.
 - return into the terminal window you used before and run <code>reboot</code>
 enjoy now your device fully activated on iOS 15!
 
->[!WARNING]
-> KNOWN ISSUES:
-> - iCloud passwords don't work (at least for me). i haven't been able to find a solution yet
->   - if you have any problem or suggestion you can reach me [here](https://github.com/ddvniele/checkm8-iOS15-downgrade/issues)
+## ⁉️ troubleshooting
+if you are unable to successfully activate your device because of some errors, you can find some solutions for most of the common errors on the [troubleshooting page](https://github.com/ddvniele/checkm8-iOS15-14-downgrade/blob/main/troubleshooting.md)
 
 ## 📥 NOT AN ICLOUD BYPASS!
 this is not a method for bypassing an iCloud lock. in fact, you can't grab files with Filza if you can't activate your device on the newest iOS available.
